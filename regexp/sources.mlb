@@ -1,0 +1,15 @@
+ann 
+   "forceUsed"
+in  
+   local
+      $(SML_LIB)/basis/basis.mlb
+      $(SML_LIB)/smlnj-lib/RegExp/regexp-lib.mlb  
+      ../basis/sources.mlb
+
+      simple-regexp.sig
+      simple-regexp.sml
+   in
+      signature SIMPLE_REGEXP
+      structure SimpleRegexp
+   end
+end

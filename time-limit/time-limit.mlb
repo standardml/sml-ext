@@ -1,0 +1,13 @@
+
+ann 
+   "forceUsed"
+in  
+   local
+      $(SML_LIB)/basis/basis.mlb
+      $(SML_LIB)/smlnj-lib/Util/time-limit.mlb
+      (* Give a warning if the actual TimeLimit is being used *)
+      warning.sml
+   in
+      structure TimeLimit
+   end
+end

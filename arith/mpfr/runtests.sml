@@ -1,0 +1,3 @@
+
+val _ = MPFRTest.doit()
+

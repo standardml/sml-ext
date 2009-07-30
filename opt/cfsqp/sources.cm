@@ -1,0 +1,14 @@
+
+Library 
+
+structure Cfsqp
+structure CfsqpTest
+
+is
+
+$/basis.cm
+../../basis/sources.cm
+../../unit-test/sources.cm
+cfsqp.sig
+cfsqp-dummy.sml
+

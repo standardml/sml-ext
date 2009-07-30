@@ -1,0 +1,28 @@
+
+ann 
+   "forceUsed"
+in 
+   local
+      $(SML_LIB)/basis/basis.mlb
+      ../basis/sources.mlb
+      ../stream/sources.mlb
+
+      pos.sig
+      pos.sml
+
+      parsing.sig
+      parsing.sml
+
+      simpletok.sig
+      simpletok.sml
+   in
+      signature POS
+      structure Pos
+
+      signature PARSING
+      structure Parsing
+
+      signature SIMPLETOK
+      structure SimpleTok
+   end
+end

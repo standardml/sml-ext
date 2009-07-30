@@ -1,0 +1,3 @@
+
+val _ = MPFITest.doit()
+

@@ -1,0 +1,2 @@
+
+structure Counting :> TIMING = Timing

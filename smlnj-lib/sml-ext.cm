@@ -1,0 +1,11 @@
+
+Library 
+
+structure SmlExt'SmlNjLib 
+signature SmlExt'SmlNjLib'ORD_SET_EXT 
+signature SmlExt'SmlNjLib'ORD_MAP_EXT 
+
+is
+
+sources.cm
+sml-ext.sml

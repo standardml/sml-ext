@@ -1,0 +1,14 @@
+
+Library 
+
+signature SIMPLE_REGEXP
+structure SimpleRegexp
+
+is
+
+$/basis.cm
+$/regexp-lib.cm
+../basis/sources.cm
+
+simple-regexp.sig
+simple-regexp.sml

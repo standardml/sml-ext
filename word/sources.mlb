@@ -1,0 +1,19 @@
+
+local
+   $(SML_LIB)/basis/basis.mlb
+   ../basis/sources.mlb
+   ../unit-test/sources.mlb
+
+   bits.sig
+   bits.sml
+   bigword.fun
+   bits-test.sml
+   bigword-test.sml
+in
+   signature BITS
+   structure Bits
+   functor BigWordFn
+   structure BitsTest
+   structure BigWordTest
+end
+

@@ -1,0 +1,117 @@
+
+Library 
+
+signature GENERAL_EXT
+structure GeneralExt
+
+signature STRING_EXT
+structure StringExt
+
+signature OPTION_EXT
+structure OptionExt
+
+signature BOOL_EXT
+structure BoolExt
+
+signature LIST_EXT
+structure ListExt
+
+signature ARRAY_EXT
+structure ArrayExt
+
+signature VECTOR_EXT
+structure VectorExt
+
+signature FUN
+structure Fun
+
+signature PAIR
+structure Pair
+
+signature REF
+structure Ref
+
+signature TEXT_IO_EXT
+structure TextIOExt
+
+signature OS_FILE_SYS_EXT
+structure OSFileSysExt
+
+signature INT_EXT
+structure IntExt
+
+signature ORDER
+structure Order
+
+structure PackRealBig
+
+signature REAL_EXT
+structure RealExt
+
+signature IEEE_REAL_EXT
+structure IEEERealExt
+
+signature TIMER_EXT
+structure TimerExt
+
+signature MATH_EXT
+structure MathExt
+
+is
+
+$/basis.cm
+
+general-ext.sig
+general-ext.sml
+
+string-ext.sig
+string-ext.sml
+
+option-ext.sig
+option-ext.sml
+
+bool-ext.sig
+bool-ext.sml
+
+list-ext.sig
+list-ext.sml
+
+array-ext.sig
+array-ext.sml
+
+vector-ext.sig
+vector-ext.sml
+
+fun.sig
+fun.sml
+
+pair.sig
+pair.sml
+
+ref.sig
+ref.sml
+
+order.sig
+order.sml
+
+textio-ext.sig
+textio-ext.sml
+
+os-filesys-ext.sig
+os-filesys-ext.sml
+
+int-ext.sig
+int-ext.sml
+ 
+pack-real-big-nj.sml
+real-ext.sig
+real-ext.sml
+
+ieee-real-ext.sig
+ieee-real-ext.sml
+
+timer-ext.sig
+timer-ext.sml
+
+math-ext.sig
+math-ext.sml

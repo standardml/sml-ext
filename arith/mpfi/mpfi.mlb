@@ -1,0 +1,23 @@
+
+ann 
+   "forceUsed"
+in  
+   local
+      $(SML_LIB)/basis/basis.mlb
+      $(SML_LIB)/basis/mlton.mlb
+      ../../basis/sources.mlb  
+      ../../util/sources.mlb
+      ../../pp/sources.mlb
+      ../../unit-test/sources.mlb
+      ../mpfr/mpfr.mlb
+
+      mpfi.sig
+      mpfi.sml
+      mpfi-test.sml
+   in
+      structure MPFI
+      structure MPFITest
+   end
+end
+
+

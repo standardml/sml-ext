@@ -1,0 +1,12 @@
+
+local
+   $(SML_LIB)/basis/basis.mlb
+   ../../basis/sources.mlb
+   ../../unit-test/sources.mlb
+
+   sources.mlb
+   tests.sml
+in
+   structure CfsqpTests
+end
+

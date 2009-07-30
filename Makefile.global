@@ -1,0 +1,218 @@
+# -*- Mode: Makefile -*-
+
+include $(SML_EXT_HOME)/Makefile.local
+
+# The calling Makefile should define SML_EXT_HOME
+
+# OS (mac | linux)
+
+OS := $(if $(filter $(shell uname -s), Darwin),mac,linux)
+
+# Home of mlton, mllex, mlyacc
+MLTON_DIR := $(dir $(shell which mlton))
+
+# Junk directory
+TMP_DIR := /tmp
+
+# For output width
+TERMINAL_WIDTH := 80
+
+# Find all files sml and make files, pruning the .cm subdirectories created by SML/NJ
+SML = Makefile $(SML_EXT_HOME)/sml-ext.map $(shell find . -name "*.sml" -o -name "*.sig" -o -name "*.fun" -o -name "Makefile" -o -name "*.cm" -prune)
+
+# SML := Makefile $(shell ls *.sml *.fun *.sig *.mlb 2> /dev/null)
+
+# ------------------------------  Generated code  ------------------------------
+
+# this variable is appended to by the lower level makefiles
+# it is used in [default] to generate them, and [clean] to remove them
+GENERATED +:= 
+
+generated : $(GENERATED)
+
+# ------------------------------  MLton options  -------------------------------
+
+# Build a static executable on linux.  Doesn't work on mac.
+ifeq ($(OS), mac)
+STATIC := 
+else
+STATIC := -static
+endif
+
+# Inlining
+INLINE := 
+
+# Profiling
+PROFILE := 
+# -const 'Exn.keepHistory true' 
+# -profile count 
+# -profile time -profile-stack true
+
+# Warn if profiling is on.  Profiling slows down the computations
+.PHONY : check_profile
+check_profile : 
+ifneq ($(strip $(PROFILE)),)
+	@echo ""
+	@echo "!!! Warning: Profiling is ON !!!: " $(PROFILE)
+	@echo ""
+endif
+
+DEF_USE := -show-def-use .mlton.du -prefer-abs-paths true 
+
+DEFAULTS := \
+-default-ann 'allowFFI true' \
+-default-ann 'nonexhaustiveMatch error' \
+-default-ann 'nonexhaustiveExnMatch default' \
+-default-ann 'redundantMatch error' \
+-default-ann 'sequenceNonUnit error' \
+-default-ann 'warnUnused true' \
+-default-ann 'forceUsed'
+
+# verbose
+VERBOSE := -verbose 1
+
+# Size of memory allowed for MLton, in megabytes
+MEMORY_SIZE := -runtime 'max-heap 1500M'
+
+# this variable can be appended to by the lower level makefiles
+MLB_PATH_MAPS = -mlb-path-map $(SML_EXT_HOME)/sml-ext.map
+
+# this variable can be appended to by the lower level makefiles
+OPTS = 
+
+# this variable can be appended to by the lower level makefiles
+OBJS = 
+
+# MLton options
+MLTON_OPTS = $(VERBOSE) $(INLINE) $(PROFILE) $(DEF_USE) $(DEFAULTS) \
+             $(MLB_PATH_MAPS) $(MEMORY_SIZE)
+
+MLTON = $(MLTON_DIR)mlton $(MLTON_OPTS) 
+
+# ------------------------------------------------------------------------------
+#  FFI libraries                                                                
+# ------------------------------------------------------------------------------
+
+ffi :
+
+CFSQP_SML_DIR := $(SML_EXT_HOME)/opt/cfsqp
+
+cfsqp :
+	cd $(CFSQP_SML_DIR); $(MAKE)
+
+ifeq ($(USE_CFSQP),true)
+OBJS += $(CFSQP_SML_DIR)/cfsqp-stubs.o
+OPTS += -link-opt '-L$(CFSQP_LIB_DIR) -lcfsqp'
+ffi : cfsqp
+endif
+
+KNITRO_SML_DIR := $(SML_EXT_HOME)/opt/knitro
+
+knitro : 
+	cd $(KNITRO_SML_DIR); $(MAKE)
+
+ifeq ($(USE_KNITRO),true)
+OBJS += $(KNITRO_SML_DIR)/knitro-stubs.o
+OPTS += -link-opt '-Xlinker -rpath $(KNITRO_LIB_DIR) -L$(KNITRO_LIB_DIR) -lknitro -ldl'
+ffi : knitro
+endif
+
+GLPK_SML_DIR := $(SML_EXT_HOME)/lp/glpk
+
+glpk :
+	cd $(GLPK_SML_DIR); $(MAKE)
+
+ifeq ($(USE_GLPK),true)
+OBJS += $(GLPK_SML_DIR)/glpk-stubs.o
+OPTS += -link-opt '-Xlinker -rpath $(GLPK_LIB_DIR) -L$(GLPK_LIB_DIR) -lglpk'
+ffi : glpk
+endif
+
+CPLEX_SML_DIR := $(SML_EXT_HOME)/lp/cplex
+
+cplex :
+	cd $(CPLEX_SML_DIR); $(MAKE)
+
+ifeq ($(USE_CPLEX),true)
+OBJS += $(CPLEX_SML_DIR)/cplex-stubs.o
+OPTS += -link-opt '-L$(CPLEX_LIB_DIR) -lcplex'
+ffi : cplex
+endif
+
+MPFR_SML_DIR := $(SML_EXT_HOME)/arith/mpfr
+
+mpfr :
+	cd $(MPFR_SML_DIR); $(MAKE)
+
+ifeq ($(USE_MPFR),true)
+OBJS += $(MPFR_SML_DIR)/mpfr-stubs.o 
+OPTS += -link-opt '-L$(MPFR_LIB_DIR) -lmpfr -Wl,-rpath $(MPFR_LIB_DIR)'
+ifeq ($(OS), mac)
+OBJS += $(MPFR_SML_DIR)/open_memstream.o
+endif
+ffi : mpfr
+endif
+
+MPFI_SML_DIR := $(SML_EXT_HOME)/arith/mpfi
+
+mpfi : 
+	cd $(MPFI_SML_DIR); $(MAKE)
+
+ifeq ($(USE_MPFI),true)
+OBJS += $(MPFI_SML_DIR)/mpfi-stubs.o
+OPTS += -link-opt '-L$(MPFI_LIB_DIR) -lmpfi'
+ffi : mpfi
+endif
+
+# --------------------------------  typecheck  ---------------------------------
+
+check : sources.mlb $(SML) $(GENERATED)
+	$(MLTON) -stop tc $(OPTS) $< $(OBJS)
+
+# ---------------------------------  compile  ----------------------------------
+
+# if SML code typechecks it always compiles.  However, the linker might
+# fail if there are C libraries involved.
+# Call 'make compile' to make sure the code links with the exernal libraries
+compile : sources.mlb $(SML) 
+	$(MLTON) -output $(TMP_DIR)/sources $(OPTS) $< $(OBJS)
+
+# -----------------------------------  test  -----------------------------------
+
+# the mlb for testing is always called "runtests.mlb"
+runtests : runtests.mlb $(SML) 
+	@$(MAKE) check_profile
+	$(MLTON) -output $@ $(OPTS) $< $(OBJS)
+
+test : $(GENERATED) $(SML) runtests
+
+# -----------------------------------  doc  ------------------------------------
+
+doc : $(FILES)
+	-mkdir doc
+	smldoc -d doc --linksource \
+        $(shell find  \( -name "*.svn" -o -name "*.cm" -o -path "./contrib" \) -prune -o -name "*.sml" | grep "\.sml")
+
+# ----------------------------------  clean  -----------------------------------
+
+JUNK = *~ .doc *.o .cm .mlton.du runtests 
+
+clean : 
+	rm -rf $(JUNK) $(GENERATED)
+
+all-clean : clean
+	cd $(GLPK_SML_DIR); $(MAKE) clean
+	cd $(KNITRO_SML_DIR); $(MAKE) clean
+	cd $(CFSQP_SML_DIR); $(MAKE) clean
+	cd $(MPFR_SML_DIR); $(MAKE) clean
+	cd $(MPFI_SML_DIR); $(MAKE) clean
+
+# ------------------------------------------------------------------------------
+#  Debug                                                                        
+# ------------------------------------------------------------------------------
+
+printsml : $(SML)
+	@echo $(SML)
+
+printgen : $(GENERATED)
+	@echo $(GENERATED)

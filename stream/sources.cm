@@ -1,0 +1,25 @@
+
+Library 
+
+signature LAZY'
+structure Lazy'
+structure LazyMemo
+
+signature STREAM
+structure Stream
+structure StreamMemo
+structure StreamTest
+
+is
+
+$/basis.cm
+../basis/sources.cm
+../unit-test/sources.cm
+
+lazy.sig
+lazy.sml
+
+stream.sig
+stream.sml
+
+stream-test.sml

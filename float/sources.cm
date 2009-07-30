@@ -1,0 +1,20 @@
+
+Library 
+
+signature FLOAT
+functor FloatFun
+structure Float64
+structure FloatTest
+structure FPUTest
+
+is
+
+$/basis.cm
+../basis/sources.cm
+../word/sources.cm
+../unit-test/sources.cm
+float.sig
+float.fun
+float64.sml
+float-test.sml
+fpu-test.sml

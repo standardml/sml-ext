@@ -1,0 +1,18 @@
+
+ann 
+   "forceUsed"
+in 
+   local
+      $(SML_LIB)/basis/basis.mlb 
+      $(SML_LIB)/smlnj-lib/PP/pp-lib.mlb
+
+      ../basis/sources.mlb
+      string-device.sml
+      pp.sig
+      pp.sml
+   in
+      signature PP
+      structure PP
+      structure StringDevice
+   end
+end

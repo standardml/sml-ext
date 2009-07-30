@@ -1,0 +1,11 @@
+
+ann 
+   "forceUsed"
+in  
+   local
+      $(SML_LIB)/basis/basis.mlb
+      time-limit-dummy.sml
+   in
+      structure TimeLimit
+   end
+end

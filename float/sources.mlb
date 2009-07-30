@@ -1,0 +1,20 @@
+
+local
+   $(SML_LIB)/basis/basis.mlb
+   ../basis/sources.mlb
+   ../word/sources.mlb
+   ../unit-test/sources.mlb
+
+   float.sig
+   float.fun
+   float64.sml
+   float-test.sml
+   fpu-test.sml
+in
+   signature FLOAT
+   functor FloatFun
+   structure Float64
+   structure FloatTest
+   structure FPUTest
+end
+

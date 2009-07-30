@@ -1,0 +1,15 @@
+
+ann 
+   "forceUsed"
+in  
+   local
+      $(SML_LIB)/basis/basis.mlb 
+      $(SML_LIB)/basis/mlton.mlb 
+      ../basis/sources.mlb
+      mlton-ext-sig.sml
+      mlton-ext.sml
+   in
+      signature MLTON_EXT 
+      structure MLtonExt
+   end
+end

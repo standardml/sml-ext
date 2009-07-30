@@ -1,0 +1,20 @@
+
+Library 
+
+signature BITS
+structure Bits
+functor BigWordFn
+structure BigWordTest
+structure BitsTest
+
+is
+
+$/basis.cm
+../basis/sources.cm
+../unit-test/sources.cm
+bits.sig
+bits.sml
+bits-test.sml
+bigword.fun
+bigword-test.sml
+

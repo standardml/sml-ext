@@ -1,0 +1,11 @@
+
+ann 
+   "forceUsed"
+in  
+   local
+      $(SML_LIB)/basis/basis.mlb
+      $(SML_LIB)/smlnj-lib/Util/time-limit.mlb
+   in
+      structure TimeLimit
+   end
+end

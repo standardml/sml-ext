@@ -1,0 +1,14 @@
+
+local
+   cplex/sources.mlb
+in
+   signature STANDARD_LP_BASE
+   signature STANDARD_LP
+   structure StandardLp
+   functor StandardLpFn
+   signature LP
+   functor LpFn
+   structure Lp = CplexLp
+   structure LpTest = CplexTest
+end
+

@@ -1,0 +1,30 @@
+
+ann 
+   "forceUsed"
+in 
+   local
+      $(SML_LIB)/basis/basis.mlb
+      $(SML_LIB)/basis/mlton.mlb
+      ../basis/sources.mlb  
+      ../util/sources.mlb
+      ../unit-test/sources.mlb
+      ../pp/sources.mlb
+
+      lp/standard-lp.sig
+      lp/standard-lp.fun
+      lp/lp.sig
+      lp/lp.fun
+      none/lp.sml
+      none/lp-test.sml
+   in
+      signature STANDARD_LP_BASE
+      signature STANDARD_LP
+      signature LP
+      functor LpFn
+      functor StandardLpFn
+      structure StandardLp
+      structure Lp
+      structure LpTest
+   end
+end
+

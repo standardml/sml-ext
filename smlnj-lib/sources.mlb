@@ -1,0 +1,52 @@
+
+ann 
+   "forceUsed"
+in  
+   local
+      $(SML_LIB)/basis/basis.mlb
+      $(SML_LIB)/smlnj-lib/Util/smlnj-lib.mlb
+
+      ../basis/sources.mlb
+      ../pp/sources.mlb
+
+      ord-set-$(ORD_SET).fun
+      ord-set-ext.sig
+      ord-set-ext.fun
+
+      bit-set.fun
+
+      ord-map-$(ORD_MAP).fun
+      ord-map-ext.sig
+      ord-map-ext.fun
+      
+      fifo-ext.sig
+      fifo-ext.sml
+
+      atom-ext.sml
+
+      random-ext.sig
+      random-ext.sml
+
+      hash-table-ext.sig
+      hash-table-ext.sml
+   in
+      signature ORD_SET_EXT
+      functor OrdSetExtFn
+      functor BitSetExtFn
+
+      signature ORD_MAP_EXT
+      functor OrdMapExtFn
+
+      signature FIFO_EXT
+      structure FifoExt
+
+      structure AtomSplaySetExt
+      structure AtomSplayMapExt
+
+      signature RANDOM_EXT
+      structure RandomExt
+
+      signature HASH_TABLE_EXT
+      structure HashTableExt
+   end
+end

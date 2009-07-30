@@ -1,0 +1,29 @@
+
+Library 
+
+signature STANDARD_LP_BASE
+signature STANDARD_LP
+signature LP
+functor LpFn
+structure StandardLp
+structure Lp
+structure LpTest
+functor StandardLpFn
+
+is
+
+$/basis.cm
+$/smlnj-lib.cm
+
+../basis/sources.cm
+../util/sources.cm
+../pp/sources.cm
+../unit-test/sources.cm
+lp/lp.sig
+lp/lp.fun
+lp/standard-lp.sig
+lp/standard-lp.fun
+none/lp.sml
+none/lp-test.sml
+
+

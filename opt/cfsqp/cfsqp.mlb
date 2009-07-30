@@ -1,0 +1,14 @@
+
+local
+   $(SML_LIB)/basis/basis.mlb
+   $(SML_LIB)/smlnj-lib/Util/smlnj-lib.mlb
+   ../../basis/sources.mlb
+   ../../unit-test/sources.mlb
+   cfsqp.sig
+   cfsqp.sml
+   cfsqp-test.sml
+in
+   structure Cfsqp
+   structure CfsqpTest
+end
+

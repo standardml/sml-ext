@@ -1,0 +1,6 @@
+
+Including the SMLNJ TimeLimit structure in MLton can impact
+performance negatively.  Include "time-limit.mlb" if you're not
+sure and want a warning.  Include "time-limit-no-warning.mlb"
+if you've determined TimeLimit does not affect your performance.
+

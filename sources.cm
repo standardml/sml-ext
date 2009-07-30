@@ -1,0 +1,113 @@
+
+Library 
+
+(* basis *)
+
+structure GeneralExt
+structure StringExt
+structure OptionExt
+structure BoolExt
+structure ListExt
+structure ArrayExt
+structure VectorExt
+structure Fun
+structure Pair
+structure Ref
+structure TextIOExt
+structure OSFileSysExt
+structure IntExt
+structure Order
+structure PackRealBig
+structure RealExt
+structure IEEERealExt
+structure TimerExt
+structure MathExt
+
+(* stream *)
+
+structure Stream
+structure StreamTest
+
+(* parse *)
+
+structure Pos
+structure Parsing
+structure SimpleTok
+
+(* pp *)
+
+structure PP
+
+(* smlnj-lib *)
+
+signature ORD_SET_EXT
+functor OrdSetExtFn
+functor BitSetExtFn
+structure SetTest
+signature ORD_MAP_EXT
+functor OrdMapExtFn
+structure FifoExt
+structure AtomSplaySetExt
+structure AtomSplayMapExt
+structure RandomExt
+structure HashTableExt
+
+(* unit-test *)
+
+signature UNIT_TEST
+structure UnitTests
+
+(* util *)
+
+structure Iter
+functor NameFn
+structure Permutation
+structure ListPermutationTest
+structure VectorPermutationTest
+structure Svn
+structure Tuple1
+structure Tuple2
+structure Tuple3
+structure Tuple4
+structure Tuple5
+structure Tuple6
+structure Tuple7
+structure Tuple8
+structure Tuple9
+structure TimeUtil
+functor TraceFn
+structure CheckCommandline
+functor HeapFn
+functor PersistentUnionFindFn
+functor ImperativeUnionFindFn
+structure UnionFindTest
+structure GrowArray
+functor MemoryPoolFn
+structure Dot
+structure Fold
+structure RecordUpdate
+
+is
+
+$/basis.cm
+basis/sources.cm
+stream/sources.cm
+float/sources.cm
+mlton/sources.cm
+parse/sources.cm
+pp/sources.cm
+smlnj-lib/sources.cm
+regexp/sources.cm
+time-limit/sources.cm
+unit-test/sources.cm
+util/sources.cm
+timing/sources.cm
+word/sources.cm
+lp/sources.cm
+
+opt/cfsqp/sources.cm
+opt/knitro/sources.cm
+
+basis/list-ext-test.sml
+basis/real-ext-test.sml
+test/sml-ext-test.sml

@@ -1,0 +1,19 @@
+
+ann 
+   "forceUsed"
+in  
+   local
+      $(SML_LIB)/basis/basis.mlb
+      $(SML_LIB)/basis/mlton.mlb
+      ../../basis/sources.mlb
+      ../../smlnj-lib/sources.mlb
+      ../../unit-test/sources.mlb
+
+      knitro.sig
+      knitro.sml
+      knitro-test.sml
+   in
+      structure Knitro
+      structure KnitroTest
+   end
+end

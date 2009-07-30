@@ -1,0 +1,91 @@
+
+(* -------------------------------------------------------------------------- *)
+(*  SML-Ext                                                                   *)
+(* -------------------------------------------------------------------------- *)
+
+SML-Ext is a small library of useful functions for Standard ML.  It builds
+under MLton and SML/NJ.  
+
+(* -------------------------------------------------------------------------- *)
+(*  Contents                                                                  *)
+(* -------------------------------------------------------------------------- *)
+
+arith     - structures for abstract arithmetic 
+basis     - extensions to the SML Basis Library
+devel     - projects in development
+float     - IEEE floating point number utilities
+lp        - linear programming
+mlton     - extensions to the MLton structure
+opt       - nonlinear optimization
+parse     - parsing
+pp        - pretty printing
+regexp    - regular expressions
+smlnj-lib - extensions to the SML/NJ library
+stream    - streams
+test      - tests for SML-Ext
+unit-test - unit testing
+util      - miscellaneous useful structures
+word      - arbitrary size machine words
+
+(* -------------------------------------------------------------------------- *)
+(*  Install                                                                   *)
+(* -------------------------------------------------------------------------- *)
+
+1) cp Makefile.example Makefile 
+2) modify the variables at the top
+3) make ffi builds the ffi files you will need
+4) cd test; make test; runtests
+
+(* -------------------------------------------------------------------------- *)
+(*  Conventions                                                               *)
+(* -------------------------------------------------------------------------- *)
+
+The general syntactic conventions follow
+
+http://mlton.org/StyleGuide
+
+If you add to or edit this code, please follow the MLton guidelines.
+
+Some additional rules:
+
+  1) In signatures, comments go *before* the val declaration
+
+  2) If you are extending an existing structure or functor, use
+     transparent ascription.  Otherwise use opaque ascription and
+     either 'sharing' or 'where type' constraints.  
+
+     Exception: If a functor uses its arguments to satisfy
+     structure constraints, using opaque ascription will force
+     a "where type" clause for every type defined in the input
+     structure.  Avoid opaque ascription in these cases.  See,
+     e.g., the MLton source.
+
+Note: The conventions are evolving.  Thus, there is probably a lot of
+code in the library that doesn't follow them.  If you see something
+that doesn't fit the guidelines, please change it.  This file is the
+authority for syntactic conventions. 
+
+(* -------------------------------------------------------------------------- *)
+(*  SVN                                                                       *)
+(* -------------------------------------------------------------------------- *)
+
+This is the content of the global-ignores for this project.
+
+global-ignores = *.aux *.log *.dvi .depend *.vo CVS *.so *.a *.o *.lo *.la *.cmo *.cmi *.cma *.cmx *.cmxa .cm *.dump .*.rej *.rej .*~ *~ *.bbl *.blg .DS_Store .gdb_history _log _build *.native *.byte *.d.native *.p.byte *.LNK *.LCK #*# .#* gmon.out a.out mlmon.out *.toc *.idx .mlton.du
+
+Please don't add anything to the project that would be filtered by this list!
+
+(* -------------------------------------------------------------------------- *)
+(*  Testing                                                                   *)
+(* -------------------------------------------------------------------------- *)
+
+To run all tests that are not in FFI, cd to unit-tests and:
+
+make test
+runtests
+
+To run ffi tests, cd to the library directory you need and:
+
+make test
+runtests
+

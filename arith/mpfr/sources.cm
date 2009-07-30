@@ -1,0 +1,15 @@
+
+Library 
+
+signature MPFR
+structure MPFR
+
+is
+
+$/basis.cm
+../../mlton/sources.cm
+
+mpfr.sig
+mpfr-dummy.sml
+
+

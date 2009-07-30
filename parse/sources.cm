@@ -1,0 +1,26 @@
+
+Library 
+
+signature POS
+structure Pos
+
+signature PARSING
+structure Parsing
+
+signature SIMPLETOK
+structure SimpleTok
+
+is
+
+$/basis.cm
+../basis/sources.cm
+../stream/sources.cm
+
+pos.sig
+pos.sml
+
+parsing.sig
+parsing.sml
+
+simpletok.sig
+simpletok.sml

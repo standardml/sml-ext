@@ -1,0 +1,55 @@
+
+Library 
+
+signature ORD_SET_EXT
+functor OrdSetExtFn
+functor BitSetExtFn
+structure SetTest
+
+signature ORD_MAP_EXT
+functor OrdMapExtFn
+
+signature FIFO_EXT
+structure FifoExt
+
+structure AtomSplaySetExt
+structure AtomSplayMapExt
+
+signature RANDOM_EXT
+structure RandomExt
+
+signature HASH_TABLE_EXT
+structure HashTableExt
+
+is
+
+$/basis.cm
+$/smlnj-lib.cm
+../basis/sources.cm
+../pp/sources.cm
+../unit-test/sources.cm
+
+bit-set.fun
+set-test.fun
+set-test.sml
+
+ord-set-splay.fun
+(* ord-set-redblack.fun *)
+ord-set-ext.sig
+ord-set-ext.fun
+
+ord-map-splay.fun
+(* ord-map-redblack.fun *)
+ord-map-ext.sig
+ord-map-ext.fun
+
+fifo-ext.sig
+fifo-ext.sml
+
+atom-ext.sml
+
+random-ext.sig
+random-ext.sml
+
+hash-table-ext.sig
+hash-table-ext.sml

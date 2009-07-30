@@ -1,0 +1,36 @@
+
+Library
+
+structure SmlExt
+signature SmlExt'ORD_SET_EXT
+
+is
+
+basis/sml-ext.cm
+unit-test/sml-ext.cm
+stream/sml-ext.cm
+parse/sml-ext.cm
+pp/sml-ext.cm
+smlnj-lib/sml-ext.cm
+
+sml-ext.sml
+
+(* time-limit/sources.cm *)
+
+(* float/sources.cm *)
+(* mlton/sources.cm *)
+
+(* regexp/sources.cm *)
+
+
+(* util/sources.cm *)
+(* timing/sources.cm *)
+(* word/sources.cm *)
+(* lp/sources.cm *)
+
+(* opt/cfsqp/sources.cm *)
+(* opt/knitro/sources.cm *)
+
+(* basis/list-ext-test.sml *)
+(* basis/real-ext-test.sml *)
+(* test/sml-ext-test.sml *)

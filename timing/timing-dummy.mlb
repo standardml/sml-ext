@@ -1,0 +1,17 @@
+ann 
+   "forceUsed"
+in  
+   local
+      $(SML_LIB)/basis/basis.mlb
+      ../basis/sources.mlb
+      ../pp/sources.mlb
+
+      timing.sig
+      timing-dummy.sml
+      counting-dummy.sml
+   in
+      signature TIMING
+      structure Timing
+      structure Counting
+   end
+end

@@ -1,0 +1,17 @@
+
+$(SML_LIB)/basis/basis.mlb
+../basis/sources.mlb
+../stream/sources.mlb
+../pp/sources.mlb
+../parse/sources.mlb
+../mlton/sources.mlb
+../regexp/sources.mlb
+../util/sources.mlb
+../float/sources.mlb
+../smlnj-lib/sources.mlb
+../word/sources.mlb
+../unit-test/sources.mlb
+../basis/list-ext-test.sml
+../basis/real-ext-test.sml
+sml-ext-test.sml
+runtests.sml
