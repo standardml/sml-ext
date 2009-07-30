@@ -2,6 +2,8 @@
 
 include $(SML_EXT_HOME)/Makefile.local
 
+default : check
+
 # The calling Makefile should define SML_EXT_HOME
 
 # OS (mac | linux)

@@ -290,7 +290,7 @@ fun findRem f =
     end
     
 (* findApp = Option.map f (List.find (isSome o f) l) *) 
-fun findApp f [] = NONE 
+fun findApp _ [] = NONE 
   | findApp f (h::t) = case f h of 
                           NONE => findApp f t
                         | some => some
