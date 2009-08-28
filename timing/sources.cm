@@ -1,7 +1,6 @@
 
 Library 
 
-signature TIMING
 structure Timing
 structure Counting
 
