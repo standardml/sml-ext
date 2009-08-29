@@ -1,12 +1,16 @@
 
-local 
-   $(SML_LIB)/basis/basis.mlb 
-   ../pp/sources.mlb
+ann 
+   "forceUsed"
+in  
+   local 
+      $(SML_LIB)/basis/basis.mlb 
+      ../pp/sources.mlb
 
-   timing.sig
-   timing.sml
-   counting.sml
-in
-   structure Timing
-   structure Counting
+      timing.sig
+      timing.sml
+      counting.sml
+   in
+      structure Timing
+      structure Counting
+   end
 end
