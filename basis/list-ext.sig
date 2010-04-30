@@ -11,6 +11,7 @@ val replicate: int * 'a -> 'a list
 val map2: ('a * 'b -> 'c) -> 'a list * 'b list -> 'c list
 val app2: ('a * 'b -> unit) -> 'a list * 'b list -> unit
 val concatMap: ('a -> 'b list) -> 'a list -> 'b list
+val intersect: ''a list * ''a list -> ''a list
 
 (* raises subscript *)
 val !! : 'a list * int -> 'a

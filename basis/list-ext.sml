@@ -479,11 +479,14 @@ fun allInjectiveMapsBy _ ([], _) = [[]]
     in
        L.concat (mapRem mapFn ys)
     end
+
 fun allInjectiveMaps l = allInjectiveMapsBy (SOME o Fun.id) l
 
 fun lookup f l = case L.find f l of
                     SOME x => x
                   | NONE => raise Impossible
+
+fun intersect (l1, l2) = L.filter (fn x => mem (x, l2)) l1
 
 open L
 
