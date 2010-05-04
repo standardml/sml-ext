@@ -89,8 +89,10 @@ structure Ops =
 
       val op$ = string
       val op$$ = text
-      val op% = hbox
-      val op%% = box
+      val op% = hvbox
+(*       val op% = hbox *)
+(*       val op%% = box *)
+      val op%% = hvbox
       fun & x = vboxNewline x
       fun && x = vboxNewline2 x
       val // = cut

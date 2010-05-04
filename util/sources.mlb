@@ -53,6 +53,9 @@ in
       fold.sig
       fold.sml
       record-update.sml
+
+      sha1.sig
+      sha1.sml
    in
       signature ITER
       structure Iter
@@ -113,5 +116,6 @@ in
 
       structure Dot
       structure RecordUpdate
+      structure SHA1
    end
 end

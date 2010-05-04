@@ -65,6 +65,8 @@ structure Dot
 structure Fold
 structure RecordUpdate
 
+structure SHA1
+
 is
 
 $/basis.cm
@@ -123,3 +125,6 @@ dot.sml
 fold.sig
 fold.sml
 record-update.sml
+
+sha1.sig
+sha1.sml
