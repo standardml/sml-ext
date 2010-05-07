@@ -51,8 +51,6 @@ val time: Time.time -> pp
 val date: Date.date -> pp
 val separate: pp -> pp list -> pp
 val unit: pp
-
-(* Insert a newline between each element *) 
 val listVert: ('a -> pp) -> 'a list -> pp
 val listHoriz: ('a -> pp) -> 'a list -> pp
 val arrayVert: ('a -> pp) -> 'a array -> pp
@@ -62,7 +60,6 @@ val vectorVert: ('a -> pp) -> 'a vector -> pp
 val vectorHoriz: ('a -> pp) -> 'a vector -> pp
 val tupleHoriz: ('a -> pp) -> 'a list -> pp (* (p1,p2,...,pn) *)
 val tupleVert: ('a -> pp) -> 'a list -> pp (* (p1,p2,...,pn) *)
-
 val option: ('a -> pp) -> 'a option -> pp
 
 val banner: {length: int, 
