@@ -9,6 +9,9 @@
 signature PP =
 sig
 
+structure P : PP_DESC
+structure PP : PP_STREAM
+
 type stream
 
 val outStream: TextIO.outstream -> int -> stream
@@ -18,11 +21,13 @@ type pp
 
 val hbox: pp list -> pp
 val vbox: pp list -> pp
+val vBox: int -> pp list -> pp
 val vboxNewline: pp list -> pp
 val vboxNewline2: pp list -> pp
+val hvBox: int -> pp list -> pp
 val hvbox: pp list -> pp
+val hovBox: int -> pp list -> pp
 val hovbox: pp list -> pp
-val box: pp list -> pp
 val string: string -> pp
 val char: char -> pp
 val space: int -> pp
@@ -98,5 +103,6 @@ structure Ops:
                 val \ : pp (* space 1 *)
                 val \\ : pp (* nbspace 2 *)
              end
+
 end
 

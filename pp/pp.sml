@@ -1,5 +1,5 @@
 
-structure PP :> PP =
+structure PP : PP =
 struct 
 
 structure D = SimpleTextIODev
@@ -16,10 +16,9 @@ struct
    fun style _ = ()
    fun size t = String.size t
 end
-structure T = TextToken
 
 structure PP = PPStreamFn(struct 
-                             structure Token = T
+                             structure Token = TextToken
                              structure Device = D
                           end)
 structure P = PPDescFn(PP)
@@ -34,10 +33,13 @@ fun stdoutStream wid =
 type pp = P.pp_desc
 
 fun hbox l = P.hBox l
-fun vbox l = P.vBox(PP.Rel 0, l)
-fun hvbox l = P.hvBox(PP.Rel 0, l)
-fun hovbox l = P.hovBox(PP.Rel 0, l)
-fun box l = P.box(PP.Rel 0, l)
+fun vBox n l = P.vBox(PP.Rel n, l)
+val vbox = vBox 0
+fun hvBox n l = P.hvBox(PP.Rel n, l)
+val hvbox = hvBox 0
+fun hovBox n l = P.hovBox(PP.Rel n, l)
+val hovbox = hovBox 0
+(* fun box l = P.box(PP.Rel 0, l) *)
 val string = P.string
 val space = P.space
 val cut = P.cut
@@ -86,12 +88,9 @@ fun cutl2 l = vbox(L.separate P.cut l)
 
 structure Ops =
    struct 
-
       val op$ = string
       val op$$ = text
-      val op% = hvbox
-(*       val op% = hbox *)
-(*       val op%% = box *)
+      val op% = hbox
       val op%% = hvbox
       fun & x = vboxNewline x
       fun && x = vboxNewline2 x
@@ -99,7 +98,6 @@ structure Ops =
       val ~ = empty
       val \ = space 1
       val \\ = nbspace 2
-
    end
 
 open Ops
@@ -112,7 +110,7 @@ local
    val rs = $"}"
    val lp = $"("
    val rp = $")"
-   val co = $", "
+   val co = $","
 in
 
 fun quote p = %[qt, p, qt]
