@@ -28,13 +28,11 @@ util      - miscellaneous useful structures
 word      - arbitrary size machine words
 
 (* -------------------------------------------------------------------------- *)
-(*  Install                                                                   *)
+(*  Usage                                                                     *)
 (* -------------------------------------------------------------------------- *)
 
-1) cp Makefile.example Makefile 
-2) modify the variables at the top
-3) make ffi builds the ffi files you will need
-4) cd test; make test; runtests
+MLton: Make a file sources.mlb that refers only to the parts you need.
+SML/NJ: import sources.cm
 
 (* -------------------------------------------------------------------------- *)
 (*  Conventions                                                               *)
