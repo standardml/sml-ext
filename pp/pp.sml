@@ -155,6 +155,9 @@ fun vectorHoriz f l = aggHoriz ($"[<") ($">]") VectorExt.toList f l
 fun tupleVert f l = aggVert ($"(") ($")") (fn x => x) f l
 fun tupleHoriz f l = aggHoriz ($"(") ($")") (fn x => x) f l
 
+fun setVert f l = aggVert ($"{") ($"}") (fn x => x) f l
+fun setHoriz f l = aggHoriz ($"{") ($"}") (fn x => x) f l
+
 fun array2 f m = 
     let
        val n = Array2.nRows m

@@ -53,6 +53,8 @@ val separate: pp -> pp list -> pp
 val unit: pp
 val listVert: ('a -> pp) -> 'a list -> pp
 val listHoriz: ('a -> pp) -> 'a list -> pp
+val setVert: ('a -> pp) -> 'a list -> pp
+val setHoriz: ('a -> pp) -> 'a list -> pp
 val arrayVert: ('a -> pp) -> 'a array -> pp
 val arrayHoriz: ('a -> pp) -> 'a array -> pp
 val array2: ('a -> pp) -> 'a Array2.array -> pp
