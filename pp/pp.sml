@@ -50,7 +50,7 @@ fun vboxNewline l = vbox (L.separate cut l)
 fun vboxNewline2 l = vbox (L.separateMany [cut, cut] l)
 fun char c = string(Char.toString c)
 
-fun separate x l = vbox (L.separate x l)
+fun separate x l = hovbox (L.separate x l)
 
 fun tokenize s = 
     let
