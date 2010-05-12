@@ -1,11 +1,48 @@
 
 Library 
 
+(*** Commandline ***)
+
+signature CHECK_COMMANDLINE
+structure CheckCommandline
+
+(*** Dot ***)
+
+structure Dot
+
+(*** Generic operators ***)
+
+structure Fold
+
 signature ITER
 structure Iter
 
+structure RecordUpdate
+
+(*** Hashing ***)
+
+structure SHA1
+
+(*** Heaps and union find ***)
+
+signature HEAP
+functor HeapFn
+
+signature PERSISTENT_UNION_FIND
+signature IMPERATIVE_UNION_FIND
+functor PersistentUnionFindFn
+functor ImperativeUnionFindFn
+structure UnionFindTest
+structure GrowArray
+functor MemoryPoolFn
+
+(*** Names ***)
+
 signature NAME
 functor NameFn
+structure Unicode
+
+(*** Permutations ***)
 
 signature PERMUTATION
 structure ListPermutation
@@ -15,8 +52,24 @@ functor PermutationTestFn
 structure ListPermutationTest
 structure VectorPermutationTest
 
+(*** SVN ***)
+
 signature SVN
 structure Svn
+
+(*** Time ***)
+
+signature TIME_UTIL
+structure TimeUtil
+
+(*** Tracing ***)
+
+signature TRACE
+functor TraceOcamlFn
+functor TraceDepthFn
+functor TraceFn
+
+(*** Tuples ***)
 
 signature TUPLE
 signature TUPLE2
@@ -37,35 +90,6 @@ structure Tuple6
 structure Tuple7
 structure Tuple8
 structure Tuple9
-
-signature TIME_UTIL
-structure TimeUtil
-
-signature TRACE
-functor TraceOcamlFn
-functor TraceDepthFn
-functor TraceFn
-
-signature CHECK_COMMANDLINE
-structure CheckCommandline
-
-signature HEAP
-functor HeapFn
-
-signature PERSISTENT_UNION_FIND
-signature IMPERATIVE_UNION_FIND
-functor PersistentUnionFindFn
-functor ImperativeUnionFindFn
-structure UnionFindTest
-structure GrowArray
-functor MemoryPoolFn
-
-structure Dot
-
-structure Fold
-structure RecordUpdate
-
-structure SHA1
 
 is
 
@@ -128,3 +152,5 @@ record-update.sml
 
 sha1.sig
 sha1.sml
+
+unicode.sml

@@ -91,6 +91,7 @@ functor MemoryPoolFn
 structure Dot
 structure Fold
 structure RecordUpdate
+structure Unicode
 
 is
 
