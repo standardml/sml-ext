@@ -1,5 +1,5 @@
 
-Library 
+Group
 
 structure SmlExt'SmlNjLib 
 signature SmlExt'SmlNjLib'ORD_SET_EXT 

@@ -1,5 +1,5 @@
 
-Library 
+Group
 
 signature SIMPLE_REGEXP
 structure SimpleRegexp

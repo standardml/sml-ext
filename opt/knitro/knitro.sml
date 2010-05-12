@@ -176,7 +176,7 @@ fun sumMat ms = L.foldl1 addMat ms
 fun scaleMat (c, m) = V.map (V.map (fn x => c * x)) m
 
 (* -------------------------------------------------------------------------- *)
-(*  Knitro Library                                                            *)
+(*  Knitro library                                                            *)
 (* -------------------------------------------------------------------------- *)
 
 val ktrNew = _import "KTR_new": unit -> ptr;
@@ -259,7 +259,7 @@ val ktrRestart = _import "KTR_restart":
 val free = _import "mlton_knitro_free": env -> int;
 
 (* -------------------------------------------------------------------------- *)
-(*  SML Library                                                               *)
+(*  SML library                                                               *)
 (* -------------------------------------------------------------------------- *)
 
 fun optimize dir (Opt {obj, constrs, lowerBnds, upperBnds,

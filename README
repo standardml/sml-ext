@@ -11,7 +11,7 @@ under MLton and SML/NJ.
 (* -------------------------------------------------------------------------- *)
 
 arith     - structures for abstract arithmetic 
-basis     - extensions to the SML Basis Library
+basis     - extensions to the SML basis library
 devel     - projects in development
 float     - IEEE floating point number utilities
 lp        - linear programming

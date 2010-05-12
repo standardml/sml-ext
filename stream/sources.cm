@@ -1,5 +1,5 @@
 
-Library 
+Group
 
 signature LAZY'
 structure Lazy'

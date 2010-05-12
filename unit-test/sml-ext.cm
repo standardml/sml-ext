@@ -1,5 +1,5 @@
 
-Library 
+Group
 
 structure SmlExt'UnitTest
 signature SmlExt'UnitTest'UNIT_TEST
