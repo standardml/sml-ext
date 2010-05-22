@@ -126,9 +126,7 @@ val drop': 'a list * int -> 'a list
 (* takeLast(l, n) = drop(l, length l - n) *) 
 val takeLast: 'a list * int -> 'a list
 
-(** 
- * remove all occurances of predicate 
- *)
+(* remove all occurances of predicate *)
 val remAll: ('a -> bool) -> 'a list -> 'a list
 
 (** 
@@ -174,5 +172,8 @@ val unique: ''a list -> bool
  *)
 val insert: 'a list * int * 'a -> 'a list
 val lexSort: ('a * 'a -> order) -> 'a list * 'a list -> order
+
+val nub: ''a list -> ''a list
+val nubBy: ('a * 'a -> bool) -> 'a list -> 'a list
 
 end

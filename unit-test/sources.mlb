@@ -1,21 +1,18 @@
 
-ann 
-   "forceUsed"
-in  
-   local
-      $(SML_LIB)/basis/basis.mlb
-      $(SML_LIB)/basis/sml-nj.mlb
+local
+   $(SML_LIB)/basis/basis.mlb
+   $(SML_LIB)/basis/sml-nj.mlb
 
-      ../basis/sources.mlb
-      ../pp/sources.mlb
-      ../time-limit/$(TIME_LIMIT).mlb
+   ../basis/sources.mlb
+   ../pp/sources.mlb
+   ../time-limit/$(TIME_LIMIT).mlb
 
-      unit-tests.sig
-      unit-tests.sml
-      unit-test.sig
-   in
-      signature UNIT_TEST
-      signature UNIT_TESTS
-      structure UnitTests
-   end
+   unit-tests.sig
+   unit-tests.sml
+   unit-test.sig
+in
+   signature UNIT_TEST
+   signature UNIT_TESTS
+   structure UnitTests
 end
+

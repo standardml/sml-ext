@@ -1,17 +1,20 @@
 
 structure OptionExt: OPTION_EXT =
-   struct 
+struct 
 
-      structure O = Option
+structure O = Option
 
-      fun compare _ (NONE,NONE) = EQUAL
-        | compare _ (NONE,_) = LESS
-        | compare _ (_,NONE) = GREATER
-        | compare p (SOME x,SOME y) = p(x,y)
+fun compare _ (NONE,NONE) = EQUAL
+  | compare _ (NONE,_) = LESS
+  | compare _ (_,NONE) = GREATER
+  | compare p (SOME x,SOME y) = p(x,y)
 
-      fun extract (SOME x,_) = x
-        | extract (NONE,exn) = raise exn 
+fun extract (SOME x,_) = x
+  | extract (NONE,exn) = raise exn 
 
-      open O
+fun option x _ NONE = x
+  | option _ f (SOME x) = f x
 
-   end
+open O
+
+end

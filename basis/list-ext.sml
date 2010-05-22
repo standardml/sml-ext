@@ -488,6 +488,11 @@ fun lookup f l = case L.find f l of
 
 fun intersect (l1, l2) = L.filter (fn x => mem (x, l2)) l1
 
+fun nubBy _ [] = []
+  | nubBy p (x::xs) = x :: nubBy p (remAll (fn y => p(x, y)) xs)
+
+fun nub l = nubBy op= l
+
 open L
 
 end

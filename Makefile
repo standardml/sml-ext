@@ -1,5 +1,9 @@
 # -*- Mode: Makefile -*-
 
+default:
+	mlton -stop tc -default-ann 'allowFFI true' \
+	  -mlb-path-map build/sml-ext.map build/sml-ext.mlb
+
 # ------------------------------------------------------------------------------
 #  Edit the following to suit your FFI requirements 
 # ------------------------------------------------------------------------------

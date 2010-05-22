@@ -1,124 +1,121 @@
-ann 
-   "forceUsed"
-in  
-   local
-      $(SML_LIB)/basis/basis.mlb
-      $(SML_LIB)/smlnj-lib/Util/smlnj-lib.mlb
+local
+   $(SML_LIB)/basis/basis.mlb
+   $(SML_LIB)/smlnj-lib/Util/smlnj-lib.mlb
 
-      ../basis/sources.mlb
-      ../stream/sources.mlb
-      ../pp/sources.mlb
-      ../parse/sources.mlb
-      ../smlnj-lib/sources.mlb
-      ../unit-test/sources.mlb
+   ../basis/sources.mlb
+   ../stream/sources.mlb
+   ../pp/sources.mlb
+   ../parse/sources.mlb
+   ../smlnj-lib/sources.mlb
+   ../unit-test/sources.mlb
 
-      iter.sig
-      iter.sml
+   iter.sig
+   iter.sml
 
-      name.sig
-      name.fun
+   name.sig
+   name.fun
 
-      permutation.sig
-      list-permutation.sml
-      vector-permutation.sml
-      permutation.sml
-      permutation-test.sml
+   permutation.sig
+   list-permutation.sml
+   vector-permutation.sml
+   permutation.sml
+   permutation-test.sml
 
-      svn.sig
-      svn.sml
+   svn.sig
+   svn.sml
 
-      tuple.sig
-      tuple.sml
+   tuple.sig
+   tuple.sml
 
-      time-util.sig
-      time-util.sml
+   time-util.sig
+   time-util.sml
 
-      trace.sig
-      trace-ocaml.fun
-      trace-depth.fun
-      trace.fun
+   trace.sig
+   trace-ocaml.fun
+   trace-depth.fun
+   trace.fun
 
-      check-commandline.sig
-      check-commandline.sml
+   check-commandline.sig
+   check-commandline.sml
 
-      heap.sig
-      heap.fun
+   heap.sig
+   heap.fun
 
-      union-find.sig
-      persistent-union-find.fun
-      imperative-union-find.fun
-      union-find-test.sml
+   union-find.sig
+   persistent-union-find.fun
+   imperative-union-find.fun
+   union-find-test.sml
 
-      dot.sml
-      fold.sig
-      fold.sml
-      record-update.sml
+   dot.sml
+   fold.sig
+   fold.sml
+   record-update.sml
 
-      sha1.sig
-      sha1.sml
+   sha1.sig
+   sha1.sml
 
-      unicode.sml
-   in
-      signature ITER
-      structure Iter
+   unicode.sml
+in
+   signature ITER
+   structure Iter
 
-      signature NAME
-      functor NameFn
+   signature NAME
+   functor NameFn
 
-      signature PERMUTATION
-      structure ListPermutation
-      structure VectorPermutation
-      structure Permutation
-      functor PermutationTestFn
-      structure ListPermutationTest
-      structure VectorPermutationTest
+   signature PERMUTATION
+   structure ListPermutation
+   structure VectorPermutation
+   structure Permutation
+   functor PermutationTestFn
+   structure ListPermutationTest
+   structure VectorPermutationTest
 
-      signature SVN
-      structure Svn
+   signature SVN
+   structure Svn
 
-      signature TUPLE
-      signature TUPLE2
-      signature TUPLE3
-      signature TUPLE4
-      signature TUPLE5
-      signature TUPLE6
-      signature TUPLE7
-      signature TUPLE8
-      signature TUPLE9
+   signature TUPLE
+   signature TUPLE2
+   signature TUPLE3
+   signature TUPLE4
+   signature TUPLE5
+   signature TUPLE6
+   signature TUPLE7
+   signature TUPLE8
+   signature TUPLE9
 
-      structure Tuple1
-      structure Tuple2
-      structure Tuple3
-      structure Tuple4
-      structure Tuple5
-      structure Tuple6
-      structure Tuple7
-      structure Tuple8
-      structure Tuple9
+   structure Tuple1
+   structure Tuple2
+   structure Tuple3
+   structure Tuple4
+   structure Tuple5
+   structure Tuple6
+   structure Tuple7
+   structure Tuple8
+   structure Tuple9
 
-      signature TIME_UTIL
-      structure TimeUtil
+   signature TIME_UTIL
+   structure TimeUtil
 
-      signature TRACE
-      functor TraceOcamlFn
-      functor TraceDepthFn
-      functor TraceFn
+   signature TRACE
+   functor TraceOcamlFn
+   functor TraceDepthFn
+   functor TraceFn
 
-      signature CHECK_COMMANDLINE
-      structure CheckCommandline
+   signature CHECK_COMMANDLINE
+   structure CheckCommandline
 
-      signature HEAP
-      functor HeapFn
+   signature HEAP
+   functor HeapFn
 
-      signature PERSISTENT_UNION_FIND
-      signature IMPERATIVE_UNION_FIND
-      functor PersistentUnionFindFn
-      functor ImperativeUnionFindFn
-      structure UnionFindTest
+   signature PERSISTENT_UNION_FIND
+   signature IMPERATIVE_UNION_FIND
+   functor PersistentUnionFindFn
+   functor ImperativeUnionFindFn
+   structure UnionFindTest
 
-      structure Dot
-      structure RecordUpdate
-      structure SHA1
-      structure Unicode
-   end
+   structure Dot
+   structure RecordUpdate
+   structure SHA1
+   structure Unicode
 end
+

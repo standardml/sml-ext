@@ -1,116 +1,113 @@
 
-ann 
-   "forceUsed"
+local 
+   $(SML_LIB)/basis/basis.mlb
+
+   string-ext.sig
+   string-ext.sml
+
+   option-ext.sig
+   option-ext.sml
+
+   bool-ext.sig
+   bool-ext.sml
+
+   fun.sig
+   fun.sml
+
+   general-ext.sig
+   general-ext.sml
+
+   list-ext.sig
+   list-ext.sml
+
+   array-ext.sig
+   array-ext.sml
+
+   vector-ext.sig
+   vector-ext.sml
+
+   pair.sig
+   pair.sml
+
+   ref.sig
+   ref.sml
+
+   order.sig
+   order.sml
+
+   textio-ext.sig
+   textio-ext.sml
+
+   os-filesys-ext.sig
+   os-filesys-ext.sml
+
+   int-ext.sig
+   int-ext.sml
+
+   real-ext.sig
+   real-ext.sml
+
+   ieee-real-ext.sig
+   ieee-real-ext.sml
+
+   timer-ext.sig
+   timer-ext.sml
+
+   math-ext.sig
+   math-ext.sml
 in
-   local 
-      $(SML_LIB)/basis/basis.mlb
+   signature GENERAL_EXT
+   structure GeneralExt
 
-      general-ext.sig
-      general-ext.sml
+   signature STRING_EXT
+   structure StringExt
 
-      string-ext.sig
-      string-ext.sml
+   signature OPTION_EXT
+   structure OptionExt
 
-      option-ext.sig
-      option-ext.sml
+   signature BOOL_EXT
+   structure BoolExt
 
-      bool-ext.sig
-      bool-ext.sml
+   signature LIST_EXT
+   structure ListExt
 
-      fun.sig
-      fun.sml
+   signature ARRAY_EXT
+   structure ArrayExt
 
-      list-ext.sig
-      list-ext.sml
+   signature VECTOR_EXT
+   structure VectorExt
 
-      array-ext.sig
-      array-ext.sml
+   signature FUN
+   structure Fun
 
-      vector-ext.sig
-      vector-ext.sml
+   signature PAIR
+   structure Pair
 
-      pair.sig
-      pair.sml
+   signature REF
+   structure Ref
 
-      ref.sig
-      ref.sml
+   signature TEXT_IO_EXT
+   structure TextIOExt
 
-      order.sig
-      order.sml
+   signature OS_FILE_SYS_EXT
+   structure OSFileSysExt
 
-      textio-ext.sig
-      textio-ext.sml
+   signature INT_EXT
+   structure IntExt
 
-      os-filesys-ext.sig
-      os-filesys-ext.sml
+   signature ORDER
+   structure Order
 
-      int-ext.sig
-      int-ext.sml
+   signature REAL_EXT
+   structure RealExt
 
-      real-ext.sig
-      real-ext.sml
+   signature IEEE_REAL_EXT
+   structure IEEERealExt
 
-      ieee-real-ext.sig
-      ieee-real-ext.sml
+   signature TIMER_EXT
+   structure TimerExt
 
-      timer-ext.sig
-      timer-ext.sml
-
-      math-ext.sig
-      math-ext.sml
-   in
-      signature GENERAL_EXT
-      structure GeneralExt
-
-      signature STRING_EXT
-      structure StringExt
-
-      signature OPTION_EXT
-      structure OptionExt
-
-      signature BOOL_EXT
-      structure BoolExt
-
-      signature LIST_EXT
-      structure ListExt
-
-      signature ARRAY_EXT
-      structure ArrayExt
-
-      signature VECTOR_EXT
-      structure VectorExt
-
-      signature FUN
-      structure Fun
-
-      signature PAIR
-      structure Pair
-
-      signature REF
-      structure Ref
-
-      signature TEXT_IO_EXT
-      structure TextIOExt
-
-      signature OS_FILE_SYS_EXT
-      structure OSFileSysExt
-
-      signature INT_EXT
-      structure IntExt
-
-      signature ORDER
-      structure Order
-
-      signature REAL_EXT
-      structure RealExt
-
-      signature IEEE_REAL_EXT
-      structure IEEERealExt
-
-      signature TIMER_EXT
-      structure TimerExt
-
-      signature MATH_EXT
-      structure MathExt
-   end
+   signature MATH_EXT
+   structure MathExt
 end
+

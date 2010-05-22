@@ -1,38 +1,35 @@
 
-ann 
-   "forceUsed"
-in 
-   local
-      $(SML_LIB)/basis/basis.mlb
-      $(SML_LIB)/basis/mlton.mlb
-      ../basis/sources.mlb  
-      ../util/sources.mlb
-      ../unit-test/sources.mlb
-      ../pp/sources.mlb
+local
+   $(SML_LIB)/basis/basis.mlb
+   $(SML_LIB)/basis/mlton.mlb
+   ../basis/sources.mlb  
+   ../util/sources.mlb
+   ../unit-test/sources.mlb
+   ../pp/sources.mlb
 
-      lp/standard-lp.sig
-      lp/standard-lp.fun
-      lp/lp.sig
-      lp/lp.fun
-      lp/lp-test.fun
-      glpk/glpk.sig
-      ann (* I want to keep unusued GLPK variables *)
-         "warnUnused false"
-      in
-         glpk/glpk.sml
-      end
-      glpk/glpk-lp-base.sml
-      glpk/glpk-lp.sml
-      glpk/glpk-base-test.sml
-      glpk/glpk-test.sml
+   lp/standard-lp.sig
+   lp/standard-lp.fun
+   lp/lp.sig
+   lp/lp.fun
+   lp/lp-test.fun
+   glpk/glpk.sig
+   ann (* I want to keep unusued GLPK variables *)
+      "warnUnused false"
    in
-      signature STANDARD_LP_BASE
-      signature STANDARD_LP
-      signature LP
-      functor LpFn
-      functor StandardLpFn
-      structure StandardLp = StandardGlpkLp
-      structure Lp = GlpkLp
-      structure LpTest = GlpkTest
+      glpk/glpk.sml
    end
+   glpk/glpk-lp-base.sml
+   glpk/glpk-lp.sml
+   glpk/glpk-base-test.sml
+   glpk/glpk-test.sml
+in
+   signature STANDARD_LP_BASE
+   signature STANDARD_LP
+   signature LP
+   functor LpFn
+   functor StandardLpFn
+   structure StandardLp = StandardGlpkLp
+   structure Lp = GlpkLp
+   structure LpTest = GlpkTest
 end
+

@@ -1,25 +1,21 @@
 
-(* This is just for testing of the library.  Individual mlb files
- are in the subdirectories. *)
-
 $(SML_LIB)/basis/basis.mlb
 
-basis/sources.mlb
-stream/sources.mlb
-float/sources.mlb
-mlton/sources.mlb
-parse/sources.mlb
-pp/sources.mlb
-smlnj-lib/sources.mlb
-regexp/sources.mlb
-unit-test/sources.mlb
-util/sources.mlb
-timing/$(TIMING).mlb
-word/sources.mlb
+../basis/sources.mlb
+../stream/sources.mlb
+../float/sources.mlb
+../mlton/sources.mlb
+../parse/sources.mlb
+../pp/sources.mlb
+../smlnj-lib/sources.mlb
+../unit-test/sources.mlb
+../util/sources.mlb
+../timing/$(TIMING).mlb
+../word/sources.mlb
 
-opt/cfsqp/cfsqp.mlb
-opt/knitro/knitro.mlb
+../opt/cfsqp/cfsqp.mlb
+../opt/knitro/knitro.mlb
 
-basis/list-ext-test.sml
-basis/real-ext-test.sml
-test/sml-ext-test.sml
+../basis/list-ext-test.sml
+../basis/real-ext-test.sml
+../test/sml-ext-test.sml

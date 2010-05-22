@@ -1,5 +1,5 @@
 
-TIMING       timing-dummy
+TIMING       timing
 TIME_LIMIT   time-limit-dummy
 ORD_SET      splay
 ORD_MAP      splay

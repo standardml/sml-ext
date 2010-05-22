@@ -19,6 +19,7 @@ signature ORD_MAP_EXT =
       val equal: ''a map * ''a map -> bool
 
       val choose: 'a map -> (Key.ord_key * 'a * 'a map) option
+      val delete: 'a map * Key.ord_key -> ('a map * 'a) option
                                       
       val search: ('a -> bool) -> 'a map -> 'a option
       val searchi: (Key.ord_key * 'a -> bool) -> 'a map 

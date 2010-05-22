@@ -1,26 +1,23 @@
-ann 
-   "forceUsed"
-in 
-   local
-      $(SML_LIB)/basis/basis.mlb
-      $(SML_LIB)/smlnj-lib/Util/smlnj-lib.mlb
+local
+   $(SML_LIB)/basis/basis.mlb
+   $(SML_LIB)/smlnj-lib/Util/smlnj-lib.mlb
 
-      ../basis/sources.mlb
-      ../unit-test/sources.mlb
+   ../basis/sources.mlb
+   ../unit-test/sources.mlb
 
-      lazy.sig
-      lazy.sml
+   lazy.sig
+   lazy.sml
 
-      stream.sig
-      stream.sml
-      stream-test.sml
-   in
-      signature LAZY'
-      structure Lazy'
-      structure LazyMemo
-      signature STREAM
-      structure Stream
-      structure StreamMemo
-      structure StreamTest
-   end
+   stream.sig
+   stream.sml
+   stream-test.sml
+in
+   signature LAZY'
+   structure Lazy'
+   structure LazyMemo
+   signature STREAM
+   structure Stream
+   structure StreamMemo
+   structure StreamTest
 end
+

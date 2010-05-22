@@ -24,6 +24,10 @@ fun choose m =
           SOME (x, y, m')
        end
 
+fun delete mx = 
+    SOME (M.remove mx) 
+    handle LibBase.NotFound => NONE
+
 fun difference (m1, m2) = 
     M.filteri (fn (k,_) => not (isSome (M.find(m2, k)))) m1
 
