@@ -51,6 +51,7 @@ val time: Time.time -> pp
 val date: Date.date -> pp
 val separate: pp -> pp list -> pp
 val unit: pp
+val commas: ('a -> pp) -> 'a list -> pp
 val listVert: ('a -> pp) -> 'a list -> pp
 val listHoriz: ('a -> pp) -> 'a list -> pp
 val setVert: ('a -> pp) -> 'a list -> pp
