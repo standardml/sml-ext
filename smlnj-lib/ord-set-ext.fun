@@ -63,7 +63,7 @@ functor OrdSetExtFn'(Args: ARGS) : ORD_SET_EXT =
 
       fun ppVert s = %[$"{",&(L.mapButlast (fn x => %[x, $","], fn x => x) (map ppItem (Set.listItems s))),$"}"]
 
-      fun ppHoriz s = %[$"{",%(L.separate ($", ") (map ppItem (Set.listItems s))),$"}"]
+      fun pp s = %[$"{",%(L.separate ($", ") (map ppItem (Set.listItems s))),$"}"]
 
       fun isProperSubset (s, s') = Set.isSubset(s, s') andalso not(Set.equal(s, s'))
 

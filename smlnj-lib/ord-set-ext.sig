@@ -27,6 +27,6 @@ sig
   val deleteIfMem: set * item -> set
 
   val pmap: (Key.ord_key -> 'a) -> set -> 'a list
-  val ppHoriz: set -> PP.pp
+  val pp: set -> PP.pp
   val ppVert: set -> PP.pp
 end
