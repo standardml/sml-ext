@@ -1,5 +1,5 @@
 
-structure PP : PP =
+structure PP :> PP =
 struct 
 
 structure D = SimpleTextIODev
@@ -129,9 +129,6 @@ fun realFmt n x = $(Real.fmt (StringCvt.GEN (SOME n)) x)
 fun time t = $(Time.toString t)
 fun date t = $(Date.toString t)
 
-(* Commas after the elements *)
-(* fun aggVert lb rb conv f l = %[lb, &(L.mapButlast (fn x => %[f x, co], f) (conv l)), rb] *)
-
 (* Commas before the elements *)
 fun aggVert lb rb conv f l = 
     case conv l of 
@@ -158,7 +155,7 @@ fun tupleHoriz f l = aggHoriz ($"(") ($")") (fn x => x) f l
 fun setVert f l = aggVert ($"{") ($"}") (fn x => x) f l
 fun setHoriz f l = aggHoriz ($"{") ($"}") (fn x => x) f l
 
-val commas = separate ($", ")
+fun commas f l = separate ($", ") (map f l)
 
 fun array2 f m = 
     let

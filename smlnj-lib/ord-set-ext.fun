@@ -25,10 +25,24 @@ functor OrdSetExtFn'(Args: ARGS) : ORD_SET_EXT =
              NONE => raise Empty
            | SOME x => x
 
-      fun deleteIfMem (sx as (s,_)) = 
-          Set.delete sx 
-          handle LibBase.NotFound => s
+(*       fun deleteIfMem (sx as (s,_)) =  *)
+(*           Set.delete sx  *)
+(*           handle LibBase.NotFound => s *)
 
+      fun deleteIfMem (sx as (s,_)) = 
+          if Set.member sx then Set.delete sx else s
+
+      fun findApp p = 
+          let
+             exception FoundIt of 'a 
+             fun p' x = case p x of
+                           NONE => false
+                         | SOME y => raise FoundIt y
+          in
+          fn s => (ignore(Set.find p' s); NONE)
+            handle FoundIt x => SOME x
+          end
+          
       fun findRem p s =
           case Set.find p s of
              NONE => NONE 

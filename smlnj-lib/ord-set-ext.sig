@@ -22,6 +22,7 @@ sig
   val mapPartial: (item -> item option) -> set -> set
   val all: (item -> bool) -> set -> bool
   val isProperSubset: set * set -> bool
+  val findApp: (item -> 'a option) -> set -> 'a option
 
   (* delete the item if its a member.  do nothing otherwise *)
   val deleteIfMem: set * item -> set

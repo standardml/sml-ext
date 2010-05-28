@@ -14,5 +14,7 @@ datatype ('a, 'b) either = Left of 'a
                          | Right of 'b
 val id = Fun.id
 val curry = Fun.curry
+val swap = Fun.swap
+val flip = Fun.flip
 
 end

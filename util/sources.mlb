@@ -118,4 +118,3 @@ in
    structure SHA1
    structure Unicode
 end
-
