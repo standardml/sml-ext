@@ -194,9 +194,8 @@ end
 fun doit stm pp = doit1 stm (&[ pp
                               , ~])
 
-fun pp pp = doit (stdoutStream 80) pp
-fun ppl pp = doit (stdoutStream 80) (&[ pp, ~])
-(* fun ppl pp = doit (stdoutStream 80) (pp *)
+val pp = doit1 (stdoutStream 80)
+val ppl = doit (stdoutStream 80) 
 
 fun writeFileColumn (file, n, p) = 
     let
@@ -207,6 +206,6 @@ fun writeFileColumn (file, n, p) =
      ; X.closeOut stm
     end
 
-fun writeFile (file, p) = writeFileColumn(file, 100000, p)
+fun writeFile (file, p) = writeFileColumn(file, 80, p)
 
 end

@@ -1,2 +1,2 @@
 
-val _ = print "### Warning: using TimeLimit ### \n" 
+val _ = print "### Warning: using TimeLimit ###\n" 
