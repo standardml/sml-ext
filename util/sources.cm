@@ -69,6 +69,10 @@ functor TraceOcamlFn
 functor TraceDepthFn
 functor TraceFn
 
+(*** Universal type ***)
+
+structure Univ
+
 (*** Tuples ***)
 
 signature TUPLE
@@ -154,3 +158,6 @@ sha1.sig
 sha1.sml
 
 unicode.sml
+
+univ.sig
+univ.sml

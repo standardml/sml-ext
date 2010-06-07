@@ -132,6 +132,7 @@ val remAll: ('a -> bool) -> 'a list -> 'a list
 (** 
  * remove first occurance of predicate 
  *)
+val findRemFirst: ('a -> 'b option) -> 'a list -> ('b * 'a list) option
 val findRem: ('a -> bool) -> 'a list -> ('a * 'a list) option
 val findApp: ('a -> 'b option) -> 'a list -> 'b option
 

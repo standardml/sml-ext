@@ -5,6 +5,9 @@ local
    string-ext.sig
    string-ext.sml
 
+   either.sig
+   either.sml
+
    option-ext.sig
    option-ext.sml
 
@@ -64,6 +67,9 @@ in
 
    signature OPTION_EXT
    structure OptionExt
+
+   signature EITHER
+   structure Either
 
    signature BOOL_EXT
    structure BoolExt

@@ -279,16 +279,19 @@ fun assocRem x = genAssocRem op= x
 
 end (* local *) 
 
-fun findRem f =
+fun findRemFirst f =
     let
        fun findRemAux [] _ = NONE 
          | findRemAux (h::t) store = 
-           if f h then SOME (h,rev store @ t) 
-           else findRemAux t (h::store)
+           case f h of 
+              SOME x => SOME (x,rev store @ t) 
+            | NONE => findRemAux t (h::store)
     in
        (fn xs => findRemAux xs [])
     end
-    
+
+fun findRem f = findRemFirst (fn x => if f x then SOME x else NONE)    
+
 (* findApp = Option.map f (List.find (isSome o f) l) *) 
 fun findApp _ [] = NONE 
   | findApp f (h::t) = case f h of 

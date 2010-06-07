@@ -7,6 +7,9 @@ structure GeneralExt
 signature STRING_EXT
 structure StringExt
 
+signature EITHER
+structure Either
+
 signature OPTION_EXT
 structure OptionExt
 
@@ -60,6 +63,9 @@ structure MathExt
 is
 
 $/basis.cm
+
+either.sig
+either.sml
 
 general-ext.sig
 general-ext.sml
