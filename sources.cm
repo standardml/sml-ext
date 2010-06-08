@@ -16,6 +16,7 @@ util/sources.cm
 timing/sources.cm
 word/sources.cm
 lp/sources.cm
+data/sources.cm
 
 opt/cfsqp/sources.cm
 opt/knitro/sources.cm

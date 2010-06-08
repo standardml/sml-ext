@@ -134,7 +134,7 @@ functor SlowTupleFnAux(T: SLOW_TUPLE_BASE): FAST_TUPLE_BASE =
       fun map2i f (x, y) = fromList (L.map2i f (toList x, toList y))
       fun nth (x, n) = L.nth(toList x, n) handle Subscript => raise Subscript
       fun zip (x1, x2) = fromList (L.zip(toList x1, toList x2))
-      fun unzip xs = Pair.pappp fromList fromList (L.unzip (toList xs))
+      fun unzip xs = Pair.app2 fromList fromList (L.unzip (toList xs))
       fun zip3 (x1, x2, x3) = fromList (L.zip3 (toList x1, toList x2, toList x3))
       fun unzip3 xs = 
           let

@@ -1,0 +1,11 @@
+
+Group 
+
+structure Deque
+
+is 
+
+$/basis.cm
+stream.sml
+deque.sig
+deque.sml

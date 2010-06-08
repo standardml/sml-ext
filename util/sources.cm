@@ -73,6 +73,10 @@ functor TraceFn
 
 structure Univ
 
+(*** Seq ***)
+
+(* structure Seq *)
+
 (*** Tuples ***)
 
 signature TUPLE
@@ -161,3 +165,5 @@ unicode.sml
 
 univ.sig
 univ.sml
+
+(* seq.sig *)

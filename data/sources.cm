@@ -1,0 +1,12 @@
+
+Group 
+
+structure Deque
+
+is 
+
+$/basis.cm
+
+../basis/sources.cm
+deque.sig
+deque.sml
