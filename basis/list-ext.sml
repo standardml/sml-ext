@@ -496,6 +496,18 @@ fun nubBy _ [] = []
 
 fun nub l = nubBy op= l
 
+val rec permutations: 'a list -> 'a list list =
+ fn [] => [[]]
+  | l as x::xs =>
+    let
+       val rest = permutations xs
+       val n = length l
+       val ns = upto(0, n-1)
+       fun mapfn l = map (fn k => insert(l, k, x)) ns
+    in
+       List.concat(map mapfn rest)
+    end
+
 open L
 
 end

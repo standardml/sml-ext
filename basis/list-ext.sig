@@ -177,4 +177,6 @@ val lexSort: ('a * 'a -> order) -> 'a list * 'a list -> order
 val nub: ''a list -> ''a list
 val nubBy: ('a * 'a -> bool) -> 'a list -> 'a list
 
+val permutations: 'a list -> 'a list list
+
 end
